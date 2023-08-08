@@ -10,7 +10,7 @@ klik [this](https://github.com/charlierolando/write-to-xl320-with-a-different-se
 
 ## [How to use:](#how-to-use)
 
-**• Connect Data Pin (XL-320) to TX (Serial Port)**
+**• See [xl320.ino](https://github.com/charlierolando/write-to-xl320-with-a-different-serial-port/blob/master/xl320.ino)**
 
 **• Change Serial Port:**
 
