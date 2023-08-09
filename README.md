@@ -14,40 +14,40 @@ klik [this](https://github.com/charlierolando/write-to-xl320-with-a-different-se
 
 **• Change Serial Port:**
 
-```python title="editt.cpp"
+```cpp title="editt.cpp"
 #define Serial_Port Serial1
 ```
 to
 
-```python title="editt.cpp"
+```cpp title="editt.cpp"
 #define Serial_Port *Serial_Port
 ```
 
 **• Change Baudrate configuration:**
 
-```python title="editt.cpp"
+```cpp title="editt.cpp"
 #define Serial_Baudrate 1000000
 ```
 to
 
-```python title="editt.cpp"
+```cpp title="editt.cpp"
 #define Serial_Baudrate *Baudrate
 ```
 
 **• Change ID configuration:**
 
-```python title="editt.cpp"
+```cpp title="editt.cpp"
 const int xl320_id[3] = {0, 1, 2};
 ```
 to
 
-```python title="editt.cpp"
+```cpp title="editt.cpp"
 const int xl320_id[*number_of_servos] = {*ID_1, *ID_2};
 ```
 
 **• Servo Handle:**
 
-```python title="editt.cpp"
+```cpp title="editt.cpp"
   // Talking to Serial_Port using Baudrate Serial_Baudrate, so connect servo data line to TX Serial port
   Serial_Port.begin(*Serial_Baudrate);
 
@@ -56,14 +56,14 @@ const int xl320_id[*number_of_servos] = {*ID_1, *ID_2};
 
 **• Set servo speed:**
 
-```python title="editt.cpp"
+```cpp title="editt.cpp"
   // Set the joint speed (0 - 1023)
   xl320.setJointSpeed(*servo_ID, *value);
 ```
 
 **• Set servo LED color:**
 
-```python title="editt.cpp"
+```cpp title="editt.cpp"
   char rgb[] = "rgbypcwo";
   // Set LED color (0-7)
   xl320.LED(*servo_ID, &rgb[*value]);
@@ -71,7 +71,7 @@ const int xl320_id[*number_of_servos] = {*ID_1, *ID_2};
 
 **• Set servo pos:**
 
-```python title="editt.cpp"
+```cpp title="editt.cpp"
   // Write pos to servo (0 - 1023)
   xl320.moveJoint(*servo_ID, *pos_value);
 ```
@@ -81,12 +81,13 @@ const int xl320_id[*number_of_servos] = {*ID_1, *ID_2};
 Looking from above, with the servo head at the top, wire the left plug of the servo to:
 
 * PIN1: GND
-* PIN2: 5 volts
+* PIN2: 6 ~ 8.4 Volts (Recommended : 7.4 Volts)
 * PIN3: Serial TX
 
 ![Dynamixel XL-320 wiring diagram](XL320-wiring.jpg)
 
-**• Setting the servo serial baud rate & servoID**
+**• Other**
+>Setting the servo serial baud rate & servoID
 
 We've included some example sketches to help test and setup your servos. Out of the box they're set to communicate via serial at 1Mbps, so you might want to set them down to something more managable by Arduino at 115200.
 
